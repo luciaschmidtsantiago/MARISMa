@@ -34,8 +34,7 @@ def collect_year_xml(path, year, dest_dir):
 years = ["2018", "2019", "2020", "2021", "2022"]
 for year in years: 
     zip_file_path = r"C:\Users\schmi\Downloads\Historico identificaciones en XML.zip"
-    dest_dir = r"Z:\lschmidt\GITHUB\MaldiMaranon\xml_to_parse_15798"
-    dest_dir = dest_dir + f"\{year}"
+    dest_dir = r"Z:\lschmidt\GITHUB\MaldiMaranon\xml_to_parse_15798" + f"\{year}"
 
     # Create the destination directory if it doesn't exist
     os.makedirs(dest_dir, exist_ok=True)
