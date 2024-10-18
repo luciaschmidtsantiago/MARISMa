@@ -151,7 +151,7 @@ def main():
         # zip_file_path = f"Y:/{year}.zip"
         # base_dest_dir = "Z:/lschmidt/MaldiMaranonDB"
 
-        zip_file_path = f"/export/usuarios01/lschmidt/{year}.zip"
+        zip_file_path = f"/export/data_ml4ds/bacteria_id/{year}.zip"
         base_dest_dir = "/export/usuarios_ml4ds/lschmidt/MaldiMaranonDB"
 
         os.makedirs(base_dest_dir, exist_ok=True)

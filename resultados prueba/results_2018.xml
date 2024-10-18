@@ -1,0 +1,18 @@
+<Results>
+    <Genus name="Serratia">
+        <Species name="marcescens">1</Species>
+    </Genus>
+    <Genus name="Enterococcus">
+        <Species name="faecalis">2</Species>
+    </Genus>
+    <Genus name="Staphylococcus">
+        <Species name="haemolyticus">1</Species>
+    </Genus>
+    <Genus name="Campylobacter">
+        <Species name="jejuni">3</Species>
+        <Species name="coli">1</Species>
+    </Genus>
+    <Genus name="Parabacteroides">
+        <Species name="distasonis">2</Species>
+    </Genus>
+</Results>

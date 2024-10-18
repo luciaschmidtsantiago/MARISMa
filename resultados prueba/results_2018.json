@@ -1,0 +1,18 @@
+{
+    "Serratia": {
+        "marcescens": 1
+    },
+    "Enterococcus": {
+        "faecalis": 2
+    },
+    "Staphylococcus": {
+        "haemolyticus": 1
+    },
+    "Campylobacter": {
+        "jejuni": 3,
+        "coli": 1
+    },
+    "Parabacteroides": {
+        "distasonis": 2
+    }
+}
