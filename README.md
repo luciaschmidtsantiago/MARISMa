@@ -2,6 +2,8 @@
 
 MARISMa is a pipeline for cleaning, organizing, labeling, and analyzing MALDI-TOF mass spectrometry data for microbial identification and antimicrobial resistance (AMR) research. The project includes scripts for data cleaning, quality checking, statistics generation, AMR label matching, and a demonstration use case to facilitate immediate use and reproducibility.
 
+Data is available here: https://zenodo.org/records/17201597
+
 ---
 
 ## Folder Structure
