@@ -23,7 +23,7 @@ def copy_klebsiella_folders(source_base, dest_base, csv_output):
 
         # Iterate through the valid year folders
         for year in valid_years:
-            year_path = os.path.join(source_base, year, "matched_bacteria")
+            year_path = os.path.join(source_base, year)
             if os.path.isdir(year_path):  # Ensure matched_bacteria directory exists
                 klebsiella_path = os.path.join(year_path, "Klebsiella")
                 if os.path.exists(klebsiella_path):  # Check if Klebsiella folder exists
@@ -80,14 +80,9 @@ def copy_klebsiella_folders(source_base, dest_base, csv_output):
 
 
 # Define source and destination paths
-source_base = "/export/data_ml4ds/bacteria_id/RAW_MaldiMaranon/data_cleaner_results_v2"  # Replace with the path to your source directory
-dest_base = "/export/data_ml4ds/bacteria_id/RAW_MaldiMaranon/data_cleaner_results_v2/DDBB_KLEBSIELLAS"
-csv_output = "/export/data_ml4ds/bacteria_id/RAW_MaldiMaranon/data_cleaner_results_v2/DDBB_KLEBSIELLAS/klebsiella_database.csv"
-
-# source_base = r"X:\bacteria_id\RAW_MaldiMaranon\data_cleaner_results_v2"  # Replace with the path to your source directory
-# dest_base = r"X:\bacteria_id\RAW_MaldiMaranon\data_cleaner_results_v2\DDBB_KLEBSIELLAS"
-# csv_output = r"X:\bacteria_id\RAW_MaldiMaranon\data_cleaner_results_v2\DDBB_KLEBSIELLAS\klebsiella_database.csv"
-
+source_base = "/MARISMA"  # Replace with the path to your source directory
+dest_base = "/DDBB_KLEBSIELLAS"
+csv_output = "/DDBB_KLEBSIELLAS/klebsiella_database.csv"
 
 # Run the function
 copy_klebsiella_folders(source_base, dest_base, csv_output) 
