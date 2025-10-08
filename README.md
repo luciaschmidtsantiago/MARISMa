@@ -117,6 +117,6 @@ pip install pandas numpy matplotlib tqdm
 
 ## License
 
-(C) Inés López-Mareca and Lucía Schmidt-Santiago. All rights reserved.
+(C) Inés López-Mareca and Lucía Schmidt-Santiago. Creative Commons Attribution Non Commercial No Derivatives 4.0 International.
 
 ---
