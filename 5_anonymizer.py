@@ -79,19 +79,6 @@ def anonymize_folder(input: str) -> str:
     based_id_hashed = get_hmac(base_id)[0:8]
     return f'{based_id_hashed}-{suffix}' if suffix else based_id_hashed
 
-def anonymize_metadata_old(input: str) -> str:
-    result = re.sub(
-        r'##\$PATH= <(.+)>',
-        lambda x: f'##$PATH= <ANONYMIZED_{get_hmac(x[1])}>',
-        input,
-    )
-    result = re.sub(
-        r'##\$SMPNAM= <(.+)>',
-        lambda x: f'##$SMPNAM= <ANONYMIZED_{get_hmac(x[1])}>',
-        result,
-    )
-    return result
-
 def anonymize_metadata(filepath, orig_id, anon_id, mode):
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
         content = f.read()
