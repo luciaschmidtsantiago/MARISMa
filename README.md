@@ -14,6 +14,7 @@ MARISMa/
 ├── 2_checker.py           # Checks for duplicates and empty spectra
 ├── 3_stats.py             # Generates detailed statistics and CSVs
 ├── 4_AMR_labeler.py       # Matches and labels AMR data
+├── 5_anonymizer.py        # Anonymizes study identifiers and metadata (HMAC-based; secret from MARISMA_SECRET_KEY or .marisma_secret)
 ├── Plug&Play/             # Plug & Play spectrum processing utilities (see below)
 ├── README.md              # This file
 ```
@@ -92,6 +93,31 @@ python3 3_stats.py --base_dir BASE year1 [year2 ...]
 
 **`4_AMR_labeler.py`**  
 Matches AMR labels to valid identifiers, checks genus/species, and adds file paths.
+
+### 5. Anonymization
+
+**`5_anonymizer.py`**  
+Provides utilities to anonymize study identifiers and metadata before sharing or publishing. The script uses an HMAC keyed by a secret to produce stable, non-reversible anonymized identifiers and can also scrub or replace sensitive fields inside metadata files.
+
+How it loads the secret key (preferred order):
+- `MARISMA_SECRET_KEY` environment variable (base64, hex, or raw string)
+- `MARISMA_SECRET_KEY_HEX` environment variable (hex)
+- A file named `.marisma_secret` located in the project root (`MARISMa/.marisma_secret`) or in the user home directory (`~/.marisma_secret`).
+
+Usage example (once you have the secret key available):
+```sh
+# set secret in environment
+export MARISMA_SECRET_KEY='...'
+
+# run anonymizer
+python3 5_anonymizer.py
+```
+
+Security notes:
+- Do NOT commit `.marisma_secret` or any secret into git. Add it to `.gitignore`.
+- Prefer storing secrets in a secure secrets manager or use the file with strict permissions (e.g., `chmod 600 .marisma_secret`).
+- If you rotate or change the secret key, previously anonymized values will no longer match — keep the key stable for reproducibility or re-anonymize consistently.
+
 
 ---
 
